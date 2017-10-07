@@ -9,24 +9,28 @@ const getCursorPosition = (selection, editor) => {
     return position;
 };
 
+
+const onPositionChanged = ({ getEditorState, getEditorRef, getProps }) => {
+  const editorState = getEditorState();
+  const { onSelectionPositionChange } = getProps();
+
+  if (!onSelectionPositionChange) {
+    // TODO: consider having a setPropTypes api to set prop types dynamically for the editor
+    throw new Error('The onSelectionPositionChanged prop is empty.');
+  }
+
+  const position = getCursorPosition(
+    editorState.getSelection(),
+    getEditorRef(),
+  );
+
+  onSelectionPositionChange(position);
+}
+
 export default () => ({
-  onChange: (editorState, { getEditorRef, getProps }) => {
-    setTimeout(() => {
-      const { onSelectionPositionChange } = getProps();
-
-      if (!onSelectionPositionChange) {
-        // TODO: consider having a setPropTypes api to set prop types dynamically for the editor
-        throw new Error('The onSelectionPositionChanged prop is empty.');
-      }
-
-      const position = getCursorPosition(
-        editorState.getSelection(),
-        getEditorRef(),
-      );
-
-      onSelectionPositionChange(position);
-    });
-
+  onChange: (editorState, context) => {
+    // only fire when editor ref is defined
+    if (context.getEditorRef()) onPositionChanged(context);
     return editorState;
   }
 });

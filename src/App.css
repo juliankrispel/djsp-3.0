@@ -38,3 +38,25 @@
   text-align: left;
   padding: 2em;
 }
+
+.popover-style ul {
+  padding: 0;
+  margin: 0;
+}
+
+.popover-style {
+  max-height: 100px;
+  overflow: auto;
+  border: 1px solid #ccc;
+}
+
+.popover-style li {
+  background: #f0f0f0;
+  font-size: .85em;
+  padding: .5em 1em;
+  border-bottom: 1px solid #ccc;
+}
+
+.popover-style li:last-child {
+  border-bottom: none;
+}

@@ -59,6 +59,7 @@ class App extends Component {
           onChange={this.onChange}
         />
         <Popover
+          className="popover-style"
           position={this.state.selectionPosition}
         >
           <List
