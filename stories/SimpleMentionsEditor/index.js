@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { EditorState } from 'draft-js';
-import logo from './logo.svg';
 import Editor from 'draft-js-plugins-editor';
-import selectionPositionPlugin from './djsp.selection-position';
-import Popover from './djsp.popover';
+import selectionPositionPlugin from 'djsp.selection-position';
+import Popover from 'djsp.popover';
 import times from 'lodash/times';
-import autocompletePlugin from './djsp.autocomplete';
+import autocompletePlugin from 'djsp.autocomplete';
 import faker from 'faker';
 import './App.css';
 
@@ -72,4 +71,3 @@ class App extends Component {
 }
 
 export default App;
-
