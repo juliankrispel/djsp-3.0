@@ -19,12 +19,14 @@ const onPositionChanged = ({ getEditorState, getEditorRef, getProps }) => {
     throw new Error('The onSelectionPositionChanged prop is empty.');
   }
 
-  const position = getCursorPosition(
-    editorState.getSelection(),
-    getEditorRef(),
-  );
+  setTimeout(() => {
+    const position = getCursorPosition(
+      editorState.getSelection(),
+      getEditorRef(),
+    );
 
-  onSelectionPositionChange(position);
+    onSelectionPositionChange(position);
+  })
 }
 
 export default () => ({
