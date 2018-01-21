@@ -26,7 +26,7 @@ const onPositionChanged = ({ getEditorState, getEditorRef, getProps }) => {
     );
 
     onSelectionPositionChange(position);
-  })
+  });
 }
 
 export default () => ({

@@ -8,9 +8,9 @@ import autocompletePlugin from 'djsp.autocomplete';
 import faker from 'faker';
 import './App.css';
 
-const List = ({ list }) => <ul>
+const List = ({ list, onSelect}) => <ul>
   {list.map((item, index) => (
-    <li key={index}>
+    <li onClick={(e) => onSelect(item)} key={index}>
       {item.name}
     </li>
   ))}
@@ -33,6 +33,11 @@ class App extends Component {
   });
 
   onSelectionPositionChange = selectionPosition => this.setState({ selectionPosition })
+
+  onAddMention = (event) => {
+    console.log('on add mention');
+    this.setState({ list: [] });
+  }
 
   onAutocomplete = match => {
     if (!match) {
@@ -62,6 +67,7 @@ class App extends Component {
           position={this.state.selectionPosition}
         >
           <List
+            onSelect={this.onAddMention}
             list={this.state.list}
           />
         </Popover>
