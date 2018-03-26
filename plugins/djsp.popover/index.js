@@ -31,11 +31,25 @@ const place = (place, {
 }) => {
   const style = { position: 'fixed' };
 
+  console.log('yo', place)
+
   if (place === 'below') {
+    style.left = left - (boxWidth / 2);
+    style.top = top + lineHeight;
+  } else if (place === 'below-left') {
     style.left = left;
     style.top = top + lineHeight;
-  } else if (place === 'above') {
+  } else if (place === 'below-right') {
     style.left = left;
+    style.top = top + lineHeight;
+  } else if (place === 'above-right') {
+    style.left = left;
+    style.bottom = windowHeight - top;
+  } else if (place === 'above-left') {
+    style.right = windowWidth - left;
+    style.bottom = windowHeight - top;
+  } else if (place === 'above') {
+    style.left = left - (boxWidth / 2)
     style.bottom = windowHeight - top;
   } else if (place === 'right') {
     style.left = left;
@@ -71,6 +85,7 @@ const getStyle = ({
   position: {
     left,
     height: lineHeight,
+    width: selectionWidth,
     top,
   },
   contentRect: { bounds: { height: boxHeight, width: boxWidth } },
@@ -82,6 +97,8 @@ const getStyle = ({
   const measureProps = {
     lineHeight, left, top, boxHeight, boxWidth, windowHeight, windowWidth
   };
+
+  measureProps.left = left + (selectionWidth / 2)
 
   const directionOrder = (defaultDirection === 'left' || defaultDirection === 'right'
     ? horizontalOrder.concat(verticalOrder)
@@ -135,5 +152,5 @@ export default wrapPortal(withContentRect('bounds', 'offset')(windowDimensions({
     windowWidth: window.innerWidth,
     windowHeight: window.innerHeight
   }),
-  debounce: onResize => debounce(onResize, 220),
+  debounce: onResize => debounce(onResize, 120),
 })(Popover)));
