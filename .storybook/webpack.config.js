@@ -15,6 +15,7 @@ module.exports = {
     alias: {
       'djsp.selection-position': path.resolve(__dirname, '..', 'plugins', 'djsp.selection-position'),
       'djsp.autocomplete': path.resolve(__dirname, '..', 'plugins', 'djsp.autocomplete'),
+      'djsp.button': path.resolve(__dirname, '..', 'plugins', 'djsp.button'),
       'djsp.popover': path.resolve(__dirname, '..', 'plugins', 'djsp.popover'),
       'djsp.entity-decorator': path.resolve(__dirname, '..', 'plugins', 'djsp.entity-decorator'),
     }
