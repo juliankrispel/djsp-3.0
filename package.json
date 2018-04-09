@@ -5,16 +5,17 @@
   "dependencies": {
     "axios": "^0.16.2",
     "css-loader": "^0.28.7",
-    "draft-js": "^0.10.3",
-    "draft-js-plugins-editor": "2.0.0-rc8",
+    "draft-js": "^0.10.5",
+    "draft-js-plugins-editor": "2.0.4",
     "faker": "^4.1.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-measure": "^2.0.2",
+    "react-onclickoutside": "^6.7.1",
     "react-portal": "4.0.0-beta.1",
-    "react-scripts": "1.0.14",
+    "react-scripts": "^1.1.4",
     "react-window-dimensions": "^1.0.1",
     "style-loader": "^0.19.0",
     "wordnet": "^0.1.2"
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.12",
     "@storybook/addon-links": "^3.2.12",
-    "@storybook/react": "^3.2.12"
+    "@storybook/react": "^3.2.12",
+    "flow-bin": "^0.69.0"
   }
 }

@@ -13,11 +13,12 @@ module.exports = {
 
   resolve: {
     alias: {
-      'djsp.selection-position': path.resolve(__dirname, '..', 'plugins', 'djsp.selection-position'),
-      'djsp.autocomplete': path.resolve(__dirname, '..', 'plugins', 'djsp.autocomplete'),
-      'djsp.button': path.resolve(__dirname, '..', 'plugins', 'djsp.button'),
-      'djsp.popover': path.resolve(__dirname, '..', 'plugins', 'djsp.popover'),
-      'djsp.entity-decorator': path.resolve(__dirname, '..', 'plugins', 'djsp.entity-decorator'),
+      'djsp.selection-position': path.resolve(__dirname, '..', 'packages', 'djsp.selection-position'),
+      'djsp.autocomplete': path.resolve(__dirname, '..', 'packages', 'djsp.autocomplete'),
+      'djsp.button': path.resolve(__dirname, '..', 'packages', 'djsp.button'),
+      'djsp.utils': path.resolve(__dirname, '..', 'packages', 'djsp.utils'),
+      'djsp.popover': path.resolve(__dirname, '..', 'packages', 'djsp.popover'),
+      'djsp.entity-decorator': path.resolve(__dirname, '..', 'packages', 'djsp.entity-decorator'),
     }
   }
 }

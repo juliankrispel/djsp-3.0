@@ -2,14 +2,8 @@ import getVisibleSelectionRect from 'draft-js/lib/getVisibleSelectionRect';
 
 const getCursorPosition = (selection, editor) => {
     let position = getVisibleSelectionRect(window);
-    console.log('position', position)
-    if (!position) {
-        position = editor.refs.editor.querySelector(`[data-block="true"][data-offset-key="${selection.getFocusKey()}-0-0"]`).getBoundingClientRect();
-    }
-
     return position;
 };
-
 
 const onPositionChanged = ({ getEditorState, getEditorRef, getProps }) => {
   const editorState = getEditorState();
@@ -21,13 +15,9 @@ const onPositionChanged = ({ getEditorState, getEditorRef, getProps }) => {
   }
 
   setTimeout(() => {
-    const position = getCursorPosition(
-      getEditorState().getSelection(),
-      getEditorRef(),
-    );
-
-    onSelectionPositionChange(position);
-  }, 10);
+    const position = getVisibleSelectionRect(window)
+    position && onSelectionPositionChange(position);
+  });
 }
 
 export default () => ({

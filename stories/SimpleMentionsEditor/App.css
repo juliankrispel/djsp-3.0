@@ -53,7 +53,8 @@ body {
 .popover-style {
   max-height: 100px;
   overflow: auto;
-  border: 1px solid #ccc;
+  transition: 300ms;
+  border: 1px solid #000;
 }
 
 .popover-style li {

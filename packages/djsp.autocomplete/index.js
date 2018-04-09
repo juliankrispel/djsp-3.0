@@ -33,6 +33,8 @@ const buildMatcher = trigger => {
   }
 }
 
+
+
 export default ({ trigger }) => {
   const matcher = buildMatcher(trigger);
 
