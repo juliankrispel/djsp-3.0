@@ -1,6 +1,6 @@
 // @flow
 
-import { RichUtils, EditorState } from 'draft-js';
+import { RichUtils, EditorState, ContentState, SelectionState } from 'draft-js';
 import type DraftEntityInstance from "draft-js/lib/DraftEntityInstance";
 
 export default {
@@ -42,4 +42,9 @@ export default {
     const entity = this.getCurrentEntity(editorState);
     return entity && entity.getType() === entityType;
   },
+
+  ident(contentState: ContentState, selectionState: SelectionState) {
+    // selectionState.Please
+  }
+
 };
